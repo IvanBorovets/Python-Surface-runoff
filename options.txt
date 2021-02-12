@@ -1,0 +1,37 @@
+For PyCharm + PyQt5
+
+BAT-file - start python.exe with arguments PyQt5.uic.pyuic
+@"C:\Users\Xoma\AppData\Local\Programs\Python\Python37-32\python" -m PyQt5.uic.pyuic %1 %2 %3 %4 %5 %6 %7 %8 %9
+
+Settings > Tools > External Tools > Add
+Qt Designer
+Programm: C:\Python35\Lib\site-packages\PyQt5\designer.exe
+Parameters: $FileName$
+Working directory: $FileDir$
+
+Pyuic
+Programm: C:\Python36\uiconvert.bat
+Parameters: -x $FileName$ -o $FileNameWithoutAllExtensions$.py
+Working directory: $ProjectFileDir$
+
+Settings > File and Code templates > Add
+Qt Form - .ui
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+<class>Form</class>
+<widget class="QWidget" name="Form">
+<property name="geometry">
+<rect>
+<x>0</x>
+<y>0</y>
+<width>640</width>
+<height>480</height>
+</rect>
+</property>
+<property name="windowTitle">
+<string>Form</string>
+</property>
+</widget>
+<resources/>
+<connections/>
+</ui>
